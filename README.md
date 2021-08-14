@@ -1,2 +1,5 @@
 # quest-board
-System of services that are related to Quests in GitHub &amp; the Website Platform
+System of services that are related to Quests in GitHub &amp; the Website Platform.
+- Event Driven
+- Serverless Functions
+- 
