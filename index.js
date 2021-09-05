@@ -28,6 +28,7 @@ async function handleRequest(request) {
  // Partial implemention of #1  
 //  const issues = await octokit.issues({owner: string; repo: string;}).list()
   
+//! Currently not seeing the data in "request" when hitting the Worker endpoint with the POST body HTTPIE
 console.log(request)
 
     return new Response(JSON.stringify(request), {
