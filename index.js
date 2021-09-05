@@ -18,7 +18,7 @@ addEventListener('fetch', event => {
  * @param {Request} request
  */
 async function handleRequest(request) {
-
+  //! Test locally HTTPIE hit the Worker endpoint
   //! Get the  {owner: string; repo: string;} & First Issue information from POST coming from Guild Scribe
   //*  1. Use Object to get GH Repo data  
   //*  2. Use First Issue Config to know what data to parse (file types) (other configs Raid Leader, Repo Name, Raid Name)
