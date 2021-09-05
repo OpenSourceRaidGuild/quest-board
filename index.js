@@ -7,17 +7,23 @@ const octokit = new Octokit({
 
 
 addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
+  const { request } = event
+  if (request.method === "POST") {
+    return event.respondWith(handleRequest(request))
+  }
+  return
 })
 /**
  * Respond with hello worker text
  * @param {Request} request
  */
 async function handleRequest(request) {
-   const raidsWebhook = new Webhooks({
-    secret: RAID_HOOK_SECRET,
-    path: '/raid-hooks',
-  });
+
+  //! Get the  {owner: string; repo: string;} & First Issue information from POST coming from Guild Scribe
+  //*  1. Use Object to get GH Repo data  
+  //*  2. Use First Issue Config to know what data to parse (file types) (other configs Raid Leader, Repo Name, Raid Name)
+  //*  3. Take parsed repo from GH Octokit (content URL to Array [{RawUrl}]: DirectoriesInRepo RawURL gives the file content) 
+  //*  4. Utilize the file content and file name to generate a issue using the GH Octokit 
  const issues = await octokit.issues.list()
   
 console.log(issues.data)
