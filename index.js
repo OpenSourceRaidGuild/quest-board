@@ -30,11 +30,11 @@ async function handleRequest(request) {
   
 console.log(request)
 
-    // return new Response(JSON.stringify(issues.data), {
+    return new Response(JSON.stringify(request), {
 
-    //   headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' },
 
-    // })
+    })
   
   return
   // raidsWebhook.on('issue.opened', testHook);
