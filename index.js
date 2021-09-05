@@ -24,15 +24,18 @@ async function handleRequest(request) {
   //*  2. Use First Issue Config to know what data to parse (file types) (other configs Raid Leader, Repo Name, Raid Name)
   //*  3. Take parsed repo from GH Octokit (content URL to Array [{RawUrl}]: DirectoriesInRepo RawURL gives the file content) 
   //*  4. Utilize the file content and file name to generate a issue using the GH Octokit 
- const issues = await octokit.issues.list()
+
+ // Partial implemention of #1  
+//  const issues = await octokit.issues({owner: string; repo: string;}).list()
   
-console.log(issues.data)
-    return new Response(JSON.stringify(issues.data), {
+console.log(request)
 
-      headers: { 'Content-Type': 'application/json' },
+    // return new Response(JSON.stringify(issues.data), {
 
-    })
+    //   headers: { 'Content-Type': 'application/json' },
+
+    // })
   
-
+  return
   // raidsWebhook.on('issue.opened', testHook);
 }
