@@ -19,6 +19,7 @@
   "dependencies": {
     "@octokit/rest": "^18.10.0",
     "@octokit/webhooks": "^9.14.0",
-    "got": "^11.8.2"
+    "net": "^1.0.2",
+    "tls": "^0.0.1"
   }
 }
