@@ -18,6 +18,7 @@
   "homepage": "https://github.com/OpenSourceRaidGuild/quest-board#readme",
   "dependencies": {
     "@octokit/rest": "^18.10.0",
-    "@octokit/webhooks": "^9.14.0"
+    "@octokit/webhooks": "^9.14.0",
+    "got": "^11.8.2"
   }
 }
