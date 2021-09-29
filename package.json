@@ -4,7 +4,8 @@
   "description": "System of services that are related to Quests in GitHub &amp; the Website Platform. - Event Driven - Serverless Functions",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "miniflare ./script.js --watch --debug"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,9 @@
   "homepage": "https://github.com/OpenSourceRaidGuild/quest-board#readme",
   "dependencies": {
     "@octokit/rest": "^18.10.0",
-    "@octokit/webhooks": "^9.14.0",
-    "net": "^1.0.2",
-    "tls": "^0.0.1"
+    "@octokit/webhooks": "^9.14.0"
+  },
+  "devDependencies": {
+    "miniflare": "^1.4.1"
   }
 }

@@ -21,13 +21,15 @@ const rawResponse = await octokit.repos.getContent({ owner: 'OpenSourceRaidGuild
 const { data: allRefs } = rawResponse;
 
 // Get the download URLS for each file at that path
-const downloadUrls = allRefs.map(ref => ref.download_url);
+const downloadURLs = allRefs.map(ref => ref.download_url);
 
 // Get the contents of those files
-let rawFileContents = await fetch(downloadUrls[1]);
-let fileContents = rawFileContents.body;
+const rawFileContents = downloadURLs.map(async url => await (await fetch(url)));
+// settle array of Promises for rawFileContents
+const settlePromisesFiles = await Promise.all(rawFileContents);
+const fileContents = settlePromisesFiles.map(rawFile =>  rawFile.body)
 
-
+console.log(fileContents)
 return new Response(fileContents, {
   headers: { 'Content-Type': 'application/json' },
 })
