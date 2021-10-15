@@ -12,10 +12,11 @@ addEventListener('fetch', event => {
 async function handleRequest(request) {
 // Handled by the Guild Scribe: Get the  {owner: string; repo: string;} & First Issue information from POST coming from Guild Scribe
 
-// The following steps are handled by the worker:
-//*  TODO: 
+
+//*  TODO:
+//* This will be handled by the Guild Scribe
 //*   1. Use First Issue Config to know what data to parse (file types) (other configs Raid Leader, Repo Name, Raid Name)
-//*  2. Take parsed repo from GH Octokit (content URL to Array [{RawUrl}]: DirectoriesInRepo RawURL gives the file content) 
+ 
 // Get the contents URL for the passed repo
 const rawResponse = await octokit.repos.getContent({ owner: 'OpenSourceRaidGuild', repo: 'TEST', path: '' }) 
 const { data: allRefs } = rawResponse;
