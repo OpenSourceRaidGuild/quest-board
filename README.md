@@ -3,7 +3,7 @@ System of services that are related to Quests in GitHub &amp; the Website Platfo
 - Event Driven
 - Serverless Functions
 - GitHub WebHooks 
-- First Issue as Config File
+- First Issue as Config File (This will go into Guild Scribe)
    - Raid Leader
    - Parse Files by Raid Type
 - Create Quests/Issues from parsed files 
